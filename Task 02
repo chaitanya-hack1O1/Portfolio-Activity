@@ -1,0 +1,153 @@
+Your task is to examine existing permissions on the file system. You’ll need to determine if the permissions match the authorization that should be given. If they do not match, you’ll need to modify the permissions to authorize the appropriate users and remove any unauthorized access.
+
+## **Project Description**
+
+In this project, you examine and manage file permissions inside the `/home/researcher2/projects` directory using Linux commands. The goal is to understand how permissions work, how to view them, and how to modify file and directory permissions using common commands such as `ls`, `chmod`, and `cd`.
+
+---
+
+## **Check File and Directory Details**
+
+To view all files—including hidden files—and their permissions inside the `projects` directory, use:
+
+```
+ls -al /home/researcher2/projects
+
+```
+
+This command lists:
+
+- File names
+- File types
+- Permissions
+- Owner and group
+- Size
+- Timestamps
+
+It helps confirm the permissions for:
+
+`project_k.txt`, `project_m.txt`, `project_r.txt`, `project_t.txt`, `.project_x.txt`, and the `drafts` directory.
+
+---
+
+## **Describe the Permissions String**
+
+A typical permissions string looks like:
+
+```
+-rw-rw-r--
+
+```
+
+It has four sections:
+
+1. **File type**
+    - = regular file
+    - `d` = directory
+    - `.` prefix in the name means the file is hidden (e.g., `.project_x.txt`)
+2. **User permissions (owner)**
+    - First 3 characters: `rw-` → read and write
+3. **Group permissions**
+    - Next 3 characters: `rw-` → read and write
+4. **Other permissions**
+    - Last 3 characters: `r--` → read only
+
+Each permission:
+
+- `r` = read
+- `w` = write
+- `x` = execute
+- = no permission
+
+This format helps understand who can access or modify a file.
+
+---
+
+## **Change File Permissions**
+
+To modify permissions, the `chmod` command is used. Examples based on your files:
+
+1. **project_k.txt**
+    
+    Allow read/write for all users:
+    
+    ```
+    chmod 666 project_k.txt
+    
+    ```
+    
+2. **project_m.txt**
+    
+    User: rw, Group: r, Other: no access
+    
+    ```
+    chmod 640 project_m.txt
+    
+    ```
+    
+3. **project_r.txt**
+    
+    User: rw, Group: rw, Other: r
+    
+    ```
+    chmod 664 project_r.txt
+    
+    ```
+    
+4. **project_t.txt**
+    
+    Same as above:
+    
+    ```
+    chmod 664 project_t.txt
+    
+    ```
+    
+
+---
+
+## **Change File Permissions on a Hidden File**
+
+Hidden files (starting with a dot) still follow normal permission rules.
+
+To apply permissions to `.project_x.txt`:
+
+```
+chmod 620 .project_x.txt
+
+```
+
+This sets:
+
+- User → read, write
+- Group → write
+- Other → none
+
+Hidden files require explicit naming, including the dot.
+
+---
+
+## **Change Directory Permissions**
+
+The subdirectory `drafts` requires execute (`x`) permission for any user to enter it.
+
+Given desired permissions:
+
+- User: read, write, execute
+- Group: execute
+- Other: none
+
+Use:
+
+```
+chmod 710 drafts
+
+```
+
+This ensures the owner can fully manage the directory, the group can only access it, and others cannot interact with it.
+
+---
+
+## **Summary**
+
+In this project, you explored how Linux file permissions work and learned how to identify and modify them. Using commands like `ls -al` and `chmod`, you inspected file details, understood permission strings, adjusted permissions for regular and hidden files, and updated directory permissions. This provides foundational knowledge for managing secure access in Linux systems.

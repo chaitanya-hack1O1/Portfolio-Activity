@@ -13,11 +13,69 @@ Network monitoring software to detect abnormal traffic patterns
 An IDS/IPS system to filter out some ICMP traffic based on suspicious characteristics
 
 As a cybersecurity analyst, you are tasked with using this security event to create a plan to improve your company’s network security, following the National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF). You will use the CSF to help you navigate through the different steps of analyzing this cybersecurity event and integrate your analysis into a general security strategy. We have broken the analysis into different parts in the template below. You can explore them here:
-Identify security risks through regular audits of internal networks, systems, devices, and access privileges to identify potential gaps in security.
-Protect internal assets through the implementation of policies, procedures, training and tools that help mitigate cybersecurity threats.
+Identify security risks through regular audits of internal networks, systems, devices, and access privileges to identify potential security gaps.
+Protect internal assets by implementing policies, procedures, training, and tools that help mitigate cybersecurity threats.
 
 Detect potential security incidents and improve monitoring capabilities to increase the speed and efficiency of detections.
 
 Respond to contain, neutralize, and analyze security incidents; implement improvements to the security process.
 
-Recover affected systems to normal operation and restore systems data and/or assets that have been affected by an incident.
+Recover affected systems to normal operation and restore system data and/or assets that have been affected by an incident.
+
+Your NIST CSF template is based on the ICMP-based DDoS incident your organization experienced.
+
+**Summary**
+
+A DDoS attack flooded the company’s network with ICMP packets, exploiting an unconfigured firewall. This caused internal services to become unavailable for two hours. The incident response team restored critical services, and security teams implemented new firewall rules, monitoring capabilities, and traffic-filtering systems to prevent similar attacks.
+
+---
+
+**Identify**
+
+- The attack exposed gaps in firewall configuration and network asset management.
+- Missing documentation allowed an unconfigured firewall to remain unnoticed.
+- Risks associated with external network exposure and inadequate traffic-control policies were highlighted.
+
+---
+
+**Protect**
+
+- New firewall rules were implemented to limit ICMP packet rates.
+- Source IP verification was added to help prevent IP spoofing.
+- Non-critical systems were temporarily disabled to conserve resources.
+- Updated configuration management practices were established to ensure firewalls are consistently maintained.
+
+---
+
+**Detect**
+
+- Network monitoring software was deployed to identify abnormal traffic patterns.
+- IDS/IPS technology now analyzes incoming traffic for suspicious characteristics, including malformed or excessive ICMP packets.
+- Baseline network-traffic behavior was established to support early anomaly detection.
+
+---
+
+**Respond**
+
+- Incoming ICMP traffic was blocked to stop the attack.
+- Non-critical services were taken offline to prioritize core operations.
+- The incident was investigated to determine the root cause and point of entry.
+- Internal communication channels were used to coordinate response efforts and update stakeholders.
+
+---
+
+**Recover**
+
+- Critical services were restored first, followed by the rest of the network.
+- Security teams implemented long-term firewall and monitoring improvements to increase resilience.
+- Post-incident reviews produced updated policies and documentation to prevent recurrence.
+- Lessons learned were integrated into ongoing training and security planning.
+
+---
+
+**Reflections/Notes:**
+
+- The incident emphasizes the importance of regular configuration audits.
+- Proactive monitoring could have detected the flood earlier.
+- The new controls strengthen both prevention and detection capabilities.
+- Incorporating the NIST CSF helps structure response workflows and highlights improvement opportunities.

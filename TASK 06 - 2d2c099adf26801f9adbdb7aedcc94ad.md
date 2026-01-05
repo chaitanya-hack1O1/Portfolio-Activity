@@ -4,8 +4,7 @@ You are a newly hired cybersecurity analyst for an e-commerce company. The compa
 
 You are tasked with completing a vulnerability assessment of the situation to communicate the potential risks to decision makers at the company. You must create a written report that explains how the vulnerable server is a risk to business operations and how it can be secured.
 
-
-<img width="1212" height="887" alt="image" src="https://github.com/user-attachments/assets/9ee2fba4-ef27-40db-8d10-852f961dd7d5" />
+![image.png](image.png)
 
 # **Vulnerability Assessment Report**
 
